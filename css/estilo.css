@@ -1,0 +1,123 @@
+:root {
+    --azul: #1e56b3;
+    --turquesa: #1fb8a6;
+    --fundo: #0d1117;
+    --fundo-2: #161b22;
+    --texto: #e6edf3;
+    --suave: #9aa4af;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+.texto-gradiente {
+    background: linear-gradient(90deg, var(--azul), var(--turquesa));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-mc {
+    background: linear-gradient(90deg, var(--azul), var(--turquesa));
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+}
+.btn-mc:hover { color: #fff; filter: brightness(1.12); }
+
+/* Cabeçalho */
+.cabecalho {
+    background: rgba(13, 17, 23, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #222a33;
+}
+.logo { font-weight: 800; letter-spacing: 1px; }
+.cabecalho .nav-link { color: var(--suave); }
+.cabecalho .nav-link:hover,
+.cabecalho .nav-link.active { color: var(--turquesa); }
+
+/* Início */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 90px;
+    background: radial-gradient(circle at 80% 20%, rgba(31, 184, 166, .18), transparent 45%),
+                radial-gradient(circle at 10% 80%, rgba(30, 86, 179, .22), transparent 45%),
+                var(--fundo);
+}
+.hero h1 { font-weight: 800; }
+.hero-logo { max-width: 100%; border-radius: 1rem; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
+
+/* Secções */
+section { padding: 80px 0; }
+.secao-alt { background: var(--fundo-2); }
+.titulo-secao { font-weight: 800; margin-bottom: .5rem; }
+.subtitulo { color: var(--suave); }
+
+.cartao {
+    background: var(--fundo-2);
+    border: 1px solid #222a33;
+    border-radius: 1rem;
+    transition: transform .2s, border-color .2s;
+}
+.secao-alt .cartao { background: var(--fundo); }
+.cartao:hover { transform: translateY(-6px); border-color: var(--turquesa); }
+.cartao .icone { font-size: 2.2rem; color: var(--turquesa); }
+.cartao p { color: var(--suave); }
+
+.estatistica { font-size: 2rem; font-weight: 800; }
+
+/* Formulário */
+.form-control {
+    background: var(--fundo-2);
+    border: 1px solid #2b333d;
+    color: var(--texto);
+}
+.form-control:focus {
+    background: var(--fundo-2);
+    color: var(--texto);
+    border-color: var(--turquesa);
+    box-shadow: 0 0 0 .2rem rgba(31, 184, 166, .2);
+}
+.form-control::placeholder { color: #66707b; }
+
+footer { border-top: 1px solid #222a33; color: var(--suave); padding: 28px 0; }
+footer a { color: var(--suave); font-size: 1.3rem; margin: 0 .4rem; }
+footer a:hover { color: var(--turquesa); }
+
+/* Sobre */
+.etiqueta { color: var(--turquesa); font-weight: 600; }
+.lista-valores { list-style: none; padding: 0; color: var(--suave); }
+.lista-valores li { margin-bottom: .4rem; }
+.lista-valores strong { color: var(--texto); }
+
+/* Projectos */
+.projecto { overflow: hidden; }
+.projecto-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    cursor: zoom-in;
+    background: var(--fundo-2);
+    border-bottom: 1px solid #222a33;
+}
+
+/* Voltar ao topo */
+#topo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1030;
+}
+#topo.visivel { display: flex; }
